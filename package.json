@@ -1,0 +1,25 @@
+{
+  "name": "caql",
+  "version": "0.1.0",
+  "description": "Calypso Query Language",
+  "main": "caql.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kevinswiber/caql.git"
+  },
+  "keywords": [
+    "calypso",
+    "query",
+    "language",
+    "sql"
+  ],
+  "author": "Kevin Swiber <kswiber@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevinswiber/caql/issues"
+  },
+  "homepage": "https://github.com/kevinswiber/caql"
+}
