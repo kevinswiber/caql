@@ -4,8 +4,8 @@ var ebnfParser = require('ebnf-parser');
 var lexParser = require('lex-parser');
 var Generator = require('jison').Generator;
 
-var grammarFile = '../calypso.yy';
-var lexFile = '../calypso.l';
+var grammarFile = '../caql.yy';
+var lexFile = '../caql.l';
 
 var grammar = ebnfParser.parse(file.readFileSync(grammarFile));
 grammar.lex = lexParser.parse(file.readFileSync(lexFile));
