@@ -1,0 +1,19 @@
+{
+  "name": "caql-dist",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Web distribution for CaQL",
+  "dependencies": {
+    "ebnf-parser": "~0.1.10",
+    "jison": "~0.4.15",
+    "lex-parser": "~0.1.4",
+    "read-file": "~0.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "node generator.js > caql.js"
+  },
+  "author": "Kevin Swiber <kswiber@gmail.com>",
+  "license": "MIT"
+}
