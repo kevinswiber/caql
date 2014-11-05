@@ -72,9 +72,18 @@ filter
 
 predicate
   : comparison_predicate
+  | not_equal_predicate
   | contains_predicate
   | location_predicate
   | like_predicate
+  | missing_predicate
+  ;
+
+not_equal_predicate
+  : column NOTEQUAL literal
+    { $$ = new yy.ComparisonPredicateNode($1, 'eq', $3).negate(); }
+  | NOT column NOTEQUAL literal
+    { $$ = new yy.ComparisonPredicateNode($2, 'eq', $4); }
   ;
 
 comparison_predicate
@@ -102,6 +111,13 @@ like_predicate
     { $$ = new yy.LikePredicateNode($1, $4).negate(); }
   | column NOT LIKE PARAM
     { $$ = new yy.LikePredicateNode($1, $4).negate(); }
+  ;
+
+missing_predicate
+  : column IS MISSING
+    { $$ = new yy.MissingPredicateNode($1); }
+  | column IS NOT MISSING
+    { $$ = new yy.MissingPredicateNode($1).negate(); }
   ;
 
 location_predicate

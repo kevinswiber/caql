@@ -53,6 +53,8 @@ CaQL supports the following comparison expressions:
 
 Equality: `select * where name = "Kevin"`
 
+Inequality: `select * where name != "Rose"`
+
 Greater than: `select * where age > 30`
 
 Greater than or equal to: `select * where age >= 30`
@@ -60,6 +62,17 @@ Greater than or equal to: `select * where age >= 30`
 Less than: `select * where price < 10`
 
 Less than or equal to: `select * where price <= 10`
+
+To negate comparisons, use `NOT`:  `select * where not age > 30`
+
+
+#### missing
+
+Use CaQL to discover whether an object has a property.
+
+Undefined value: `select * where price is missing`
+
+Defined value: `select * where price is not missing`
 
 #### contains
 

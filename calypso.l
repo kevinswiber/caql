@@ -60,6 +60,8 @@ escaped_name  \[(?:(?!\])[^\\]|\\.)*\]
                                           yytext = letterify(yytext);
                                           return 'COMPARISON';
                                         }
+<asgn>"!="|"neq"                        return 'NOTEQUAL'
+<asgn>"is"                              return 'IS'
 <asgn>"not"                             return 'NOT'
 <asgn>"contains"                        return 'CONTAINS'
 <asgn>"like"                            return 'LIKE'
@@ -93,6 +95,10 @@ escaped_name  \[(?:(?!\])[^\\]|\\.)*\]
                                           this.popState(); /* in fltr */
                                           yytext = null;
                                           return 'NULL';
+                                        }
+<asgn>"missing"                         {
+                                          this.popState(); /* in fltr */
+                                          return 'MISSING';
                                         }
 <loc>{number}                           return 'NUMBER'
 <loc>"of"                               return 'OF'

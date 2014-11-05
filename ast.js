@@ -102,6 +102,18 @@ Ast.LikePredicateNode.prototype.negate = function() {
   return this;
 };
 
+Ast.MissingPredicateNode = function(field) {
+  this.field = field;
+  this.operator = 'missing';
+  this.isNegated = false;
+  this.type = 'MissingPredicate';
+};
+
+Ast.MissingPredicateNode.prototype.negate = function() {
+  this.isNegated = !this.isNegated;
+  return this;
+};
+
 Ast.LocationPredicateNode = function(field, value) {
   this.field = field;
   this.operator = 'within';

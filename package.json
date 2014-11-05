@@ -4,7 +4,8 @@
   "description": "Calypso Query Language",
   "main": "caql.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "jison calypso.yy calypso.l -o parser.js"
   },
   "repository": {
     "type": "git",
